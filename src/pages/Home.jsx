@@ -6,6 +6,8 @@ import BrandShowcase from '../components/sections/BrandShowcase'
 import { WhyChooseUs, CTABanner } from '../components/sections/Highlights'
 import { Marquee } from '../components/ui/Section'
 import { designServices } from '../data/content'
+import OurServices  from '../pages/OurServices'
+
 
 export default function Home() {
   return (
@@ -16,6 +18,7 @@ export default function Home() {
       <StackedServices />
       <BrandShowcase />
       <ProcessTimeline />
+      <OurServices/>
       <WhyChooseUs />
       <CTABanner />
     </>
