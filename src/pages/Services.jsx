@@ -1,3 +1,5 @@
+
+import ServicesHero from '../components/sections/ServicesHero'
 import { servicePillars, websiteTypes } from '../data/content'
 import { SectionHeading } from '../components/ui/Section'
 import { CTABanner } from '../components/sections/Highlights'
@@ -5,18 +7,9 @@ import { Check } from 'lucide-react'
 
 export default function Services() {
   return (
+
     <>
-      <section className="border-b-2 border-ink bg-orange py-16">
-        <div className="container-x">
-          <p className="eyebrow text-ink">What we do</p>
-          <h1 className="mt-3 font-display text-5xl font-semibold text-ink sm:text-6xl">
-            Services
-          </h1>
-          <p className="mt-4 max-w-xl text-ink-soft">
-            Transform engagement into measurable business growth.
-          </p>
-        </div>
-      </section>
+      <ServicesHero />
 
       <div className="container-x space-y-20 py-20">
         {servicePillars.map((s, i) => (
