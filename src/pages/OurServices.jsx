@@ -1,19 +1,19 @@
 import { useState } from "react";
 
 const products = [
-  { name: "Orange Squeeze", img: "/images/orange.png", tag: "9g Fiber" },
-  { name: "Ginger Ale", img: "/images/ginger.png", tag: "9g Fiber" },
-  { name: "Citrus Rush", img: "/images/citrus.png", tag: "9g Fiber" },
-  { name: "Doctor Goodwin", img: "/images/doctor.png", tag: "9g Fiber" },
-  { name: "Cherry Vanilla", img: "/images/cherry.png", tag: "9g Fiber" },
-  { name: "Classic Root Beer", img: "/images/rootbeer.png", tag: "9g Fiber" },
-  { name: "Vintage Cola", img: "/images/cola.png", tag: "9g Fiber" },
-  { name: "Strawberry Vanilla", img: "/images/strawberry.png", tag: "9g Fiber" },
+  { name: "Orange Squeeze", img: "/images/orange.jpg", hoverImg: "/images/orange1.jpg", tag: "9g Fiber" },
+  { name: "Ginger Ale", img: "/images/ginger.png", hoverImg: "/images/ginger.jpg", tag: "9g Fiber" },
+  { name: "Citrus Rush", img: "/images/citrus.png", hoverImg: "/images/citrus.jpg", tag: "9g Fiber" },
+  { name: "Doctor Goodwin", img: "/images/doctor.png", hoverImg: "/images/doctor.jpg", tag: "9g Fiber" },
+  { name: "Cherry Vanilla", img: "/images/cherry.png", hoverImg: "/images/cherry.jpg", tag: "9g Fiber" },
+  { name: "Classic Root Beer", img: "/images/rootbeer.png", hoverImg: "/images/rootbeer.jpg", tag: "9g Fiber" },
+  { name: "Vintage Cola", img: "/images/cola.png", hoverImg: "/images/cola.jpg", tag: "9g Fiber" },
+  { name: "Strawberry Vanilla", img: "/images/strawberry.png", hoverImg: "/images/strawberry.jpg", tag: "9g Fiber" },
 ];
 
 const VISIBLE = 4; // ek baar me kitne cards dikhenge
 
-export default function ourservices() {
+export default function OlipopCollection() {
   const [start, setStart] = useState(0);
 
   const next = () => {
@@ -57,20 +57,29 @@ export default function ourservices() {
                 key={i}
                 className="group relative flex flex-col items-center cursor-pointer transition-all duration-500 ease-out hover:-translate-y-3"
               >
-                <div className="relative overflow-hidden rounded-2xl w-full">
+                {/* Image area - fixed portrait height */}
+                <div className="relative overflow-hidden rounded-2xl w-full h-80">
+                  {/* Main PNG image - hover pe hide ho jata hai */}
                   <img
                     src={p.img}
                     alt={p.name}
-                    className="w-full h-64 object-contain transition-transform duration-500 ease-out group-hover:scale-110"
+                    className="absolute inset-0 w-full h-full object-contain transition-opacity duration-500 ease-out group-hover:opacity-0"
                   />
 
-                  {/* Curved bottom overlay with Visit Now button */}
-                  <div className="absolute bottom-0 left-0 right-0 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out">
-                    <div className="bg-[#1c4631] rounded-t-[50%] pt-6 pb-4 px-2 text-center">
-                      <button className="bg-white text-[#1c4631] font-semibold text-sm px-5 py-2 rounded-full hover:bg-[#f0e6cf] transition-colors duration-300">
-                        Visit Now
-                      </button>
-                    </div>
+                  {/* JPG image - neeche se upar slide hoke poora card cover karta hai */}
+                  <div className="absolute inset-0 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out">
+                    <img
+                      src={p.hoverImg}
+                      alt={p.name + " preview"}
+                      className="w-full h-full object-cover"
+                    />
+
+                  {/* Visit Now button - JPG image ke neeche (bottom) */}
+                  <div className="absolute inset-0 flex items-end justify-center pb-6">
+                    <button className="bg-white text-[#1c4631] font-semibold text-sm px-6 py-2 rounded-full shadow-lg hover:bg-[#f0e6cf] transition-colors duration-300">
+                      Visit Now
+                    </button>
+                  </div>
                   </div>
                 </div>
 
