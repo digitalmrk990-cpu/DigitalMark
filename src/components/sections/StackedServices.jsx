@@ -1,6 +1,43 @@
-import { motion } from 'framer-motion'
+import { useRef } from 'react'
+import { motion, useMotionValue, useTransform } from 'framer-motion'
 import { Brush, Clapperboard, Globe, Lightbulb, Megaphone } from 'lucide-react'
 import { SectionHeading } from '../ui/Section'
+
+function TiltCard({ children }) {
+  const ref = useRef(null)
+  const x = useMotionValue(0)
+  const y = useMotionValue(0)
+
+  const rotateX = useTransform(y, [-0.5, 0.5], [12, -12])
+  const rotateY = useTransform(x, [-0.5, 0.5], [-12, 12])
+
+  const handleMouseMove = (e) => {
+    const rect = ref.current.getBoundingClientRect()
+    x.set((e.clientX - rect.left) / rect.width - 0.5)
+    y.set((e.clientY - rect.top) / rect.height - 0.5)
+  }
+
+  const handleMouseLeave = () => {
+    x.set(0)
+    y.set(0)
+  }
+
+  return (
+    <div
+      ref={ref}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      style={{ perspective: 1200 }}
+    >
+      <motion.div
+        style={{ rotateX, rotateY, transformStyle: 'preserve-3d' }}
+        transition={{ type: 'spring', stiffness: 120, damping: 14 }}
+      >
+        {children}
+      </motion.div>
+    </div>
+  )
+}
 
 // Scattered, overlapping service cards (matches the deck-derived layout).
 // Each card defines its own theme + desktop position/rotation.
@@ -100,37 +137,60 @@ function Card({ data, i }) {
   const t = themes[data.theme]
   const { Icon } = data
   return (
-    <motion.article
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
+    <motion.div
+      initial={{ opacity: 0, y: 40, scale: 0.9, rotate: -3 }}
+      whileInView={{
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        rotate: 0,
+        transition: {
+          duration: 0.6,
+          delay: i * 0.1,
+          ease: [0.17, 0.67, 0.29, 1.2],
+        },
+      }}
       viewport={{ once: true, margin: '-80px' }}
-      transition={{ duration: 0.5, delay: i * 0.08 }}
-      whileHover={{ y: -6, rotate: 0, zIndex: 40, transition: { duration: 0.25 } }}
-      className={`relative w-full rounded-md border p-7 shadow-[6px_8px_24px_-6px_rgba(31,26,23,0.35)] lg:absolute ${data.pos} ${t.card}`}
+      className={`relative w-full lg:absolute ${data.pos}`}
     >
-      <div className="flex items-start justify-between">
-        <span className={`font-display text-5xl font-medium leading-none ${t.num}`}>
-          {data.num}
-        </span>
-        <Icon size={22} className={t.icon} strokeWidth={1.6} />
-      </div>
-      <h3 className={`mt-6 font-display text-2xl font-semibold ${t.title}`}>
-        {data.title}
-      </h3>
-      <p className={`mt-3 text-sm leading-relaxed ${t.blurb}`}>{data.blurb}</p>
-      {data.tags.length > 0 && (
-        <div className="mt-5 flex flex-wrap gap-2">
-          {data.tags.map((tag) => (
-            <span
-              key={tag}
-              className={`rounded-sm px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider ${t.tag}`}
-            >
-              {tag}
+      <TiltCard>
+        <motion.article
+          whileHover={{
+            y: -10,
+            zIndex: 40,
+            boxShadow: '10px 14px 32px -8px rgba(31,26,23,0.45)',
+            transition: { duration: 0.25 },
+          }}
+          className={`rounded-md border p-7 shadow-[6px_8px_24px_-6px_rgba(31,26,23,0.35)] ${t.card}`}
+          style={{ transformStyle: 'preserve-3d' }}
+        >
+          <div className="flex items-start justify-between" style={{ transform: 'translateZ(24px)' }}>
+            <span className={`font-display text-5xl font-medium leading-none ${t.num}`}>
+              {data.num}
             </span>
-          ))}
-        </div>
-      )}
-    </motion.article>
+            <Icon size={22} className={t.icon} strokeWidth={1.6} />
+          </div>
+          <h3 className={`mt-6 font-display text-2xl font-semibold ${t.title}`} style={{ transform: 'translateZ(18px)' }}>
+            {data.title}
+          </h3>
+          <p className={`mt-3 text-sm leading-relaxed ${t.blurb}`} style={{ transform: 'translateZ(8px)' }}>
+            {data.blurb}
+          </p>
+          {data.tags.length > 0 && (
+            <div className="mt-5 flex flex-wrap gap-2" style={{ transform: 'translateZ(12px)' }}>
+              {data.tags.map((tag) => (
+                <span
+                  key={tag}
+                  className={`rounded-sm px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider ${t.tag}`}
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          )}
+        </motion.article>
+      </TiltCard>
+    </motion.div>
   )
 }
 

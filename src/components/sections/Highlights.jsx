@@ -1,5 +1,7 @@
+import { useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
-import { motion } from 'framer-motion'
+import { motion, useMotionValue, useTransform } from 'framer-motion'
+import { Check, Sparkles } from 'lucide-react'
 import { whyChooseUs } from '../../data/content'
 import { SectionHeading } from '../ui/Section'
 
@@ -20,7 +22,46 @@ const pillVariants = {
   },
 }
 
+function TiltPill({ children, active, onClick }) {
+  const ref = useRef(null)
+  const x = useMotionValue(0)
+  const y = useMotionValue(0)
+
+  const rotateX = useTransform(y, [-0.5, 0.5], [8, -8])
+  const rotateY = useTransform(x, [-0.5, 0.5], [-8, 8])
+
+  const handleMouseMove = (e) => {
+    const rect = ref.current.getBoundingClientRect()
+    x.set((e.clientX - rect.left) / rect.width - 0.5)
+    y.set((e.clientY - rect.top) / rect.height - 0.5)
+  }
+
+  const handleMouseLeave = () => {
+    x.set(0)
+    y.set(0)
+  }
+
+  return (
+    <div
+      ref={ref}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      onClick={onClick}
+      style={{ perspective: 800 }}
+    >
+      <motion.div
+        style={{ rotateX, rotateY, transformStyle: 'preserve-3d' }}
+        transition={{ type: 'spring', stiffness: 200, damping: 18 }}
+      >
+        {children}
+      </motion.div>
+    </div>
+  )
+}
+
 export function WhyChooseUs() {
+  const [active, setActive] = useState(null)
+
   return (
     <section className="bg-orange-100 py-20">
       <div className="container-x">
@@ -32,21 +73,44 @@ export function WhyChooseUs() {
           viewport={{ once: true, margin: '-40px' }}
           className="mt-10 flex flex-wrap gap-3"
         >
-          {whyChooseUs.map((item) => (
-            <motion.span
-              key={item}
-              variants={pillVariants}
-              whileHover={{
-                scale: 1.05,
-                backgroundColor: '#E8723C',
-                transition: { type: 'spring', stiffness: 400, damping: 10 },
-              }}
-              className="pill cursor-default"
-            >
-              {item}
-            </motion.span>
-          ))}
+          {whyChooseUs.map((item, i) => {
+            const isActive = active === i
+            return (
+              <TiltPill key={item} active={isActive} onClick={() => setActive(isActive ? null : i)}>
+                <motion.span
+                  variants={pillVariants}
+                  whileHover={{
+                    scale: 1.06,
+                    transition: { type: 'spring', stiffness: 400, damping: 10 },
+                  }}
+                  whileTap={{ scale: 0.92 }}
+                  animate={{
+                    backgroundColor: isActive ? '#1F1A17' : '#E8723C',
+                    color: isActive ? '#ffffff' : '#1F1A17',
+                    boxShadow: isActive
+                      ? '4px 4px 0 0 #1F1A17'
+                      : '3px 3px 0 0 #1F1A17',
+                  }}
+                  transition={{ type: 'spring', stiffness: 300, damping: 18 }}
+                  className={`pill cursor-pointer ${isActive ? '' : 'hover:bg-orange'}`}
+                >
+                  {isActive && <Check size={14} className="shrink-0" />}
+                  {item}
+                </motion.span>
+              </TiltPill>
+            )
+          })}
         </motion.div>
+        {active !== null && (
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="mt-6 text-center text-sm text-ink-muted"
+          >
+            <Sparkles size={14} className="inline -mt-0.5 mr-1" />
+            Tap another or tap again to deselect.
+          </motion.p>
+        )}
       </div>
     </section>
   )

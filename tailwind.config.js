@@ -5,13 +5,13 @@ export default {
     colors: {
       orange: {
         DEFAULT: '#E8723C',
-        50: '#FCEFE7',
-        100: '#F8DCC9',
-        200: '#F8DCC9',
-        400: '#EF8A56',
-        500: '#E8723C',
-        600: '#D45E2A',
-        700: '#B14A1E',
+        50: '#FDF2EC',
+        100: '#F9DCC9',
+        200: '#F2B991',
+        400: '#E8723C',
+        500: '#D45E2A',
+        600: '#B0481E',
+        700: '#8C3614',
       },
       ink: {
         DEFAULT: '#1F1A17',

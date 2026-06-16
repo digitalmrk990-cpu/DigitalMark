@@ -49,9 +49,14 @@ export default function Portfolio() {
               transition={{ duration: 0.35, delay: i * 0.04 }}
               className="overflow-hidden rounded-2xl border-2 border-ink shadow-[4px_4px_0_0_#1F1A17]"
             >
-              {/* Placeholder visual — swap for <img src={p.imageUrl} /> */}
-              <div className="flex aspect-[4/5] items-end bg-gradient-to-br from-orange-400 to-orange-700 p-5">
-                <div>
+              <div className="relative aspect-[4/5]">
+                <img
+                  src={p.imageUrl}
+                  alt={p.title}
+                  className="absolute inset-0 h-full w-full object-cover"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent p-5 flex flex-col justify-end">
                   <span className="font-heading text-[10px] font-bold uppercase tracking-widest text-orange-50/80">
                     {p.category}
                   </span>

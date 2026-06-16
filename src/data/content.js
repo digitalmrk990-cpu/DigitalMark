@@ -82,14 +82,15 @@ export const servicePillars = [
 ]
 
 // Portfolio sample items — replace imageUrl with real work.
+const img = (name) => `/images/${name}.svg`
 export const portfolioItems = [
-  { id: 1, title: 'New Balance Drop', category: 'Branding Assets' },
-  { id: 2, title: 'Haerin — Vogue Korea', category: 'Instagram Posts' },
-  { id: 3, title: 'John Summit Asia Tour', category: 'Event Posters' },
-  { id: 4, title: 'Editorial Eye', category: 'Story Designs' },
-  { id: 5, title: 'Porsche Feature', category: 'Ad Creatives' },
-  { id: 6, title: 'History of Cinema', category: 'Infographics' },
-  { id: 7, title: 'Minimal Figure', category: 'Carousels' },
+  { id: 1, title: 'New Balance Drop', category: 'Branding Assets', imageUrl: img('branding') },
+  { id: 2, title: 'Haerin — Vogue Korea', category: 'Instagram Posts', imageUrl: img('instagram') },
+  { id: 3, title: 'John Summit Asia Tour', category: 'Event Posters', imageUrl: img('posters') },
+  { id: 4, title: 'Editorial Eye', category: 'Story Designs', imageUrl: img('stories') },
+  { id: 5, title: 'Porsche Feature', category: 'Ad Creatives', imageUrl: img('ads') },
+  { id: 6, title: 'History of Cinema', category: 'Infographics', imageUrl: img('infographics') },
+  { id: 7, title: 'Minimal Figure', category: 'Carousels', imageUrl: img('carousels') },
 ]
 
 export const portfolioCategories = [
