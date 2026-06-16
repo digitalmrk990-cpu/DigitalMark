@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-cream-50 text-ink font-body antialiased;
+  }
+  ::selection {
+    @apply bg-orange text-cream-50;
+  }
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
+  }
+  .pill {
+    @apply inline-flex items-center rounded-full border-2 border-ink bg-orange px-5 py-2 font-heading text-sm font-bold text-ink shadow-[3px_3px_0_0_#1C1917];
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-ink px-7 py-3.5 font-heading text-sm font-bold uppercase tracking-wide text-cream-50 transition-transform hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange;
+  }
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border-2 border-ink px-7 py-3.5 font-heading text-sm font-bold uppercase tracking-wide text-ink transition-colors hover:bg-ink hover:text-cream-50;
+  }
+  .eyebrow {
+    @apply font-heading text-xs font-bold uppercase tracking-[0.25em] text-orange-600;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
