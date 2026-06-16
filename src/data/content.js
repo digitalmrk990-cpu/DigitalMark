@@ -103,3 +103,44 @@ export const portfolioCategories = [
   'Branding Assets',
   'Infographics',
 ]
+
+export const stats = [
+  { num: 50, suffix: '+', label: 'Projects Delivered' },
+  { num: 30, suffix: '+', label: 'Happy Clients' },
+  { num: 4, suffix: '+', label: 'Years Experience' },
+  { num: 500, suffix: 'K+', label: 'Reach Generated' },
+]
+
+export const processSteps = [
+  {
+    step: '01',
+    title: 'Discovery',
+    detail: 'We dive deep into your brand, audience, and competitors to find your unique edge.',
+  },
+  {
+    step: '02',
+    title: 'Strategy',
+    detail: 'A custom content roadmap is built around measurable KPIs and business goals.',
+  },
+  {
+    step: '03',
+    title: 'Creation',
+    detail: 'Design, copy, and video come together in a high-velocity production pipeline.',
+  },
+  {
+    step: '04',
+    title: 'Publishing',
+    detail: 'Content is scheduled, posted, and optimized across every relevant channel.',
+  },
+  {
+    step: '05',
+    title: 'Analysis',
+    detail: 'We track what works, iterate fast, and double down on what drives results.',
+  },
+]
+
+export const brandNames = [
+  'Nike', 'Spotify', 'Figma', 'Stripe', 'Notion',
+  'Adobe', 'Linear', 'Vercel', 'Supabase', 'Railway',
+  'Cal.com', 'Arc', 'Miro', 'Loom', 'Raycast',
+]
