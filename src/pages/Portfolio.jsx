@@ -12,7 +12,7 @@ export default function Portfolio() {
 
   return (
     <>
-      <section className="border-b-2 border-ink bg-cream-100 py-16">
+      <section className="border-b-2 border-ink bg-orange-100 py-16">
         <div className="container-x">
           <p className="eyebrow">Selected work</p>
           <h1 className="mt-3 font-display text-5xl font-semibold text-ink sm:text-6xl">
@@ -31,7 +31,7 @@ export default function Portfolio() {
               key={cat}
               onClick={() => setActive(cat)}
               className={`rounded-full border-2 border-ink px-4 py-2 font-heading text-xs font-bold uppercase tracking-wide transition-colors ${
-                active === cat ? 'bg-ink text-cream-50' : 'bg-transparent text-ink hover:bg-cream-200'
+                active === cat ? 'bg-ink text-orange-50' : 'bg-transparent text-ink hover:bg-orange-200'
               }`}
             >
               {cat}
@@ -47,15 +47,15 @@ export default function Portfolio() {
               initial={{ opacity: 0, scale: 0.96 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.35, delay: i * 0.04 }}
-              className="overflow-hidden rounded-2xl border-2 border-ink shadow-[4px_4px_0_0_#1C1917]"
+              className="overflow-hidden rounded-2xl border-2 border-ink shadow-[4px_4px_0_0_#1F1A17]"
             >
               {/* Placeholder visual — swap for <img src={p.imageUrl} /> */}
               <div className="flex aspect-[4/5] items-end bg-gradient-to-br from-orange-400 to-orange-700 p-5">
                 <div>
-                  <span className="font-heading text-[10px] font-bold uppercase tracking-widest text-cream-50/80">
+                  <span className="font-heading text-[10px] font-bold uppercase tracking-widest text-orange-50/80">
                     {p.category}
                   </span>
-                  <h3 className="font-display text-xl font-semibold text-cream-50">
+                  <h3 className="font-display text-xl font-semibold text-orange-50">
                     {p.title}
                   </h3>
                 </div>

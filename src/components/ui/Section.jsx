@@ -55,7 +55,7 @@ export function Marquee({ items }) {
             key={i}
             className="font-heading text-lg font-extrabold uppercase tracking-wide text-ink"
           >
-            {item} <span className="text-cream-50">✦</span>
+            {item} <span className="text-orange-50">✦</span>
           </span>
         ))}
       </motion.div>

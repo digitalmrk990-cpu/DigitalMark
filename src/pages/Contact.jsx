@@ -15,7 +15,7 @@ const schema = z.object({
 })
 
 const inputCls =
-  'w-full rounded-xl border-2 border-ink bg-cream-50 px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-orange'
+  'w-full rounded-xl border-2 border-ink bg-orange-50 px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-orange'
 
 export default function Contact() {
   const [status, setStatus] = useState('idle') // idle | sending | sent | error
@@ -64,7 +64,7 @@ export default function Contact() {
         </dl>
       </div>
 
-      <div className="rounded-3xl border-2 border-ink bg-cream-100 p-7 shadow-[6px_6px_0_0_#1C1917] sm:p-9">
+      <div className="rounded-3xl border-2 border-ink bg-orange-100 p-7 shadow-[6px_6px_0_0_#1F1A17] sm:p-9">
         {status === 'sent' ? (
           <div className="flex h-full flex-col items-center justify-center py-12 text-center">
             <h2 className="font-display text-3xl font-semibold text-ink">Thanks — got it.</h2>

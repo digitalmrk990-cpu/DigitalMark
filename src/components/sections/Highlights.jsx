@@ -22,7 +22,7 @@ const pillVariants = {
 
 export function WhyChooseUs() {
   return (
-    <section className="bg-cream-100 py-20">
+    <section className="bg-orange-100 py-20">
       <div className="container-x">
         <SectionHeading eyebrow="Why Choose Us?" title="Built around your results, not our ego." />
         <motion.div
@@ -38,7 +38,7 @@ export function WhyChooseUs() {
               variants={pillVariants}
               whileHover={{
                 scale: 1.05,
-                backgroundColor: '#D4A343',
+                backgroundColor: '#E8723C',
                 transition: { type: 'spring', stiffness: 400, damping: 10 },
               }}
               className="pill cursor-default"
@@ -60,12 +60,8 @@ export function CTABanner() {
         whileInView={{ opacity: 1, y: 0, scale: 1 }}
         viewport={{ once: true, margin: '-60px' }}
         transition={{ duration: 0.6, ease: 'easeOut' }}
-        className="relative overflow-hidden rounded-3xl border-2 border-ink bg-orange p-10 text-center shadow-[6px_6px_0_0_#1C1917] sm:p-16"
+        className="relative overflow-hidden rounded-3xl border-2 border-ink bg-orange p-10 text-center shadow-[6px_6px_0_0_#1F1A17] sm:p-16"
       >
-        <div className="pointer-events-none absolute inset-0">
-          <div className="absolute top-0 right-0 h-40 w-40 rounded-full bg-cream-50/10 blur-2xl" />
-          <div className="absolute bottom-0 left-0 h-32 w-32 rounded-full bg-cream-100/10 blur-2xl" />
-        </div>
         <motion.p
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -96,7 +92,7 @@ export function CTABanner() {
             className="btn-primary group relative overflow-hidden inline-flex"
           >
             <span className="relative z-10">Get a free strategy call</span>
-            <span className="absolute inset-0 -translate-x-full bg-cream-50/20 transition-transform duration-300 group-hover:translate-x-0" />
+            <span className="absolute inset-0 -translate-x-full bg-orange-50/20 transition-transform duration-300 group-hover:translate-x-0" />
           </Link>
         </motion.div>
       </motion.div>

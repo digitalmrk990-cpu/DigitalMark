@@ -11,7 +11,7 @@ const cards = [
     blurb: 'Elevating your visual identity across all platforms with data-backed design principles.',
     tags: ['Carousels', 'Posters', 'Branding'],
     Icon: Brush,
-    theme: 'cream',
+    theme: 'orange',
     // desktop placement
     pos: 'lg:left-[2%] lg:top-[0%] lg:w-[30%] lg:-rotate-2 lg:z-20',
   },
@@ -54,29 +54,29 @@ const cards = [
 ]
 
 const themes = {
-  cream: {
-    card: 'bg-cream-50 border-ink',
-    num: 'text-cream-200',
+  orange: {
+    card: 'bg-orange-50 border-ink',
+    num: 'text-orange-100',
     title: 'text-ink',
     blurb: 'text-ink-muted',
     icon: 'text-orange-600',
     tag: 'border border-ink/30 text-ink-soft',
   },
   sand: {
-    card: 'bg-cream-100 border-ink',
-    num: 'text-cream-200',
+    card: 'bg-orange-100 border-ink',
+    num: 'text-orange-100',
     title: 'text-ink',
     blurb: 'text-ink-muted',
     icon: 'text-orange-600',
-    tag: 'bg-cream-200 text-ink-soft',
+    tag: 'bg-orange-200 text-ink-soft',
   },
   white: {
     card: 'bg-white border-ink',
-    num: 'text-cream-100',
+    num: 'text-orange-100',
     title: 'text-ink',
     blurb: 'text-ink-muted',
     icon: 'text-orange-600',
-    tag: 'bg-cream-100 text-ink-soft',
+    tag: 'bg-orange-100 text-ink-soft',
   },
   dark: {
     card: 'bg-ink border-ink',

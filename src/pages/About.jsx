@@ -50,7 +50,7 @@ export default function About() {
       </section>
 
       {/* Why choose us — slide 10 */}
-      <section className="bg-cream-100 py-20">
+      <section className="bg-orange-100 py-20">
         <div className="container-x">
           <SectionHeading eyebrow="Why Choose Us?" title="The way we work." />
           <div className="mt-10 flex flex-wrap gap-3">

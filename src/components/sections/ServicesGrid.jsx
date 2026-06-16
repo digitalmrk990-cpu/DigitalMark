@@ -133,7 +133,7 @@ export default function ServicesGrid({ limit }) {
             <TiltCard>
               <Link
                 to="/services"
-                className="group relative block h-full min-w-[280px] max-w-[340px] rounded-2xl border-2 border-ink bg-cream-100 p-7 shadow-[6px_6px_0_0_#1C1917] transition-all duration-300 hover:shadow-[10px_10px_0_0_#1C1917]"
+                className="group relative block h-full min-w-[280px] max-w-[340px] rounded-2xl border-2 border-ink bg-orange-100 p-7 shadow-[6px_6px_0_0_#1F1A17] transition-all duration-300 hover:shadow-[10px_10px_0_0_#1F1A17]"
                 style={{ transformStyle: 'preserve-3d' }}
               >
                 <div
@@ -164,7 +164,7 @@ export default function ServicesGrid({ limit }) {
                   {s.items.slice(0, 4).map((item) => (
                     <span
                       key={item}
-                      className="rounded-full border border-ink/20 bg-cream-200 px-3 py-1 text-xs font-medium text-ink-soft transition-all duration-300 group-hover:bg-orange-200 group-hover:border-orange-400 group-hover:scale-105"
+                      className="rounded-full border border-ink/20 bg-orange-200 px-3 py-1 text-xs font-medium text-ink-soft transition-all duration-300 group-hover:bg-orange-200 group-hover:border-orange-400 group-hover:scale-105"
                     >
                       {item}
                     </span>

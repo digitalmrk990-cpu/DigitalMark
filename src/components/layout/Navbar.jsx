@@ -22,7 +22,7 @@ function Logo() {
 export default function Navbar() {
   const [open, setOpen] = useState(false)
   return (
-    <header className="sticky top-0 z-50 border-b-2 border-ink bg-cream-50/90 backdrop-blur">
+    <header className="sticky top-0 z-50 border-b-2 border-ink bg-orange-50/90 backdrop-blur">
       <nav className="container-x flex h-16 items-center justify-between">
         <Logo />
         <div className="hidden items-center gap-8 md:flex">
@@ -52,7 +52,7 @@ export default function Navbar() {
         </button>
       </nav>
       {open && (
-        <div className="border-t-2 border-ink bg-cream-50 md:hidden">
+        <div className="border-t-2 border-ink bg-orange-50 md:hidden">
           <div className="container-x flex flex-col gap-1 py-4">
             {links.map((l) => (
               <NavLink

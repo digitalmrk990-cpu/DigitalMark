@@ -25,11 +25,11 @@ export default function AdminLogin() {
   }
 
   const inputCls =
-    'w-full rounded-xl border-2 border-ink bg-cream-50 px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-orange'
+    'w-full rounded-xl border-2 border-ink bg-orange-50 px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-orange'
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-cream-100 px-5">
-      <form onSubmit={submit} className="w-full max-w-sm rounded-2xl border-2 border-ink bg-cream-50 p-8 shadow-[6px_6px_0_0_#1C1917]">
+    <div className="flex min-h-screen items-center justify-center bg-orange-100 px-5">
+      <form onSubmit={submit} className="w-full max-w-sm rounded-2xl border-2 border-ink bg-orange-50 p-8 shadow-[6px_6px_0_0_#1F1A17]">
         <h1 className="font-display text-3xl font-semibold text-ink">Admin</h1>
         <p className="mt-1 text-sm text-ink-muted">Sign in to manage leads and content.</p>
         <div className="mt-6 space-y-4">

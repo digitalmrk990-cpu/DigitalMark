@@ -24,7 +24,7 @@ const floatingShapes = [
     transition: { duration: 8 },
   },
   {
-    className: 'top-[8%] left-[22%] h-5 w-5 rotate-45 border-2 border-cream-50/40',
+    className: 'top-[8%] left-[22%] h-5 w-5 rotate-45 border-2 border-orange-50/40',
     animate: { y: [0, 20, 0], rotate: [0, 360] },
     transition: { duration: 18 },
   },
@@ -51,11 +51,6 @@ export default function Hero() {
 
   return (
     <section className="relative overflow-hidden bg-orange min-h-screen">
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute -top-1/2 -left-1/4 h-[800px] w-[800px] rounded-full bg-cream-50/15 blur-3xl" />
-        <div className="absolute -bottom-1/2 -right-1/4 h-[600px] w-[600px] rounded-full bg-cream-100/15 blur-3xl" />
-      </div>
-
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         {floatingShapes.map((s, i) => (
           <motion.div
@@ -73,7 +68,7 @@ export default function Hero() {
           ✦
         </motion.div>
         <motion.div
-          className="absolute bottom-[20%] left-[15%] text-xl text-cream-50/30"
+          className="absolute bottom-[20%] left-[15%] text-xl text-orange-50/30"
           animate={{ y: [0, 20, 0], rotate: [0, -10, 10, 0] }}
           transition={{ duration: 11, repeat: Infinity, ease: 'easeInOut' }}
         >
@@ -110,7 +105,7 @@ export default function Hero() {
                 style={{ transformOrigin: 'bottom center' }}
               >
                 {word === 'A' ? (
-                  <span className="italic text-cream-50">A</span>
+                  <span className="italic text-orange-50">A</span>
                 ) : (
                   word
                 )}

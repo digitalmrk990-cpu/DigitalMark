@@ -34,7 +34,7 @@ export default function Services() {
               {s.items.map((item) => (
                 <li
                   key={item}
-                  className="flex items-center gap-3 rounded-xl border-2 border-ink bg-cream-100 px-4 py-3 text-sm font-medium"
+                  className="flex items-center gap-3 rounded-xl border-2 border-ink bg-orange-100 px-4 py-3 text-sm font-medium"
                 >
                   <Check size={16} className="shrink-0 text-orange-600" />
                   {item}
@@ -54,7 +54,7 @@ export default function Services() {
             {websiteTypes.map((w) => (
               <div
                 key={w.title}
-                className="rounded-2xl border-2 border-ink bg-cream-100 p-6 shadow-[4px_4px_0_0_#1C1917]"
+                className="rounded-2xl border-2 border-ink bg-orange-100 p-6 shadow-[4px_4px_0_0_#1F1A17]"
               >
                 <h3 className="font-display text-xl font-semibold text-ink">{w.title}</h3>
                 <p className="mt-2 text-sm text-ink-muted">{w.blurb}</p>

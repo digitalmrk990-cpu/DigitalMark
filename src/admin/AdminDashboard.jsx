@@ -5,9 +5,9 @@ import { api } from '../lib/api'
 const STATUSES = ['new', 'contacted', 'won', 'lost']
 const statusColor = {
   new: 'bg-orange text-ink',
-  contacted: 'bg-cream-200 text-ink',
-  won: 'bg-ink text-cream-50',
-  lost: 'bg-cream-100 text-ink-muted',
+  contacted: 'bg-orange-200 text-ink',
+  won: 'bg-ink text-orange-50',
+  lost: 'bg-orange-100 text-ink-muted',
 }
 
 export default function AdminDashboard() {
@@ -53,8 +53,8 @@ export default function AdminDashboard() {
   )
 
   return (
-    <div className="min-h-screen bg-cream-100">
-      <header className="border-b-2 border-ink bg-cream-50">
+    <div className="min-h-screen bg-orange-100">
+      <header className="border-b-2 border-ink bg-orange-50">
         <div className="container-x flex h-16 items-center justify-between">
           <h1 className="font-display text-2xl font-semibold text-ink">Leads</h1>
           <button onClick={logout} className="btn-outline py-2">Sign out</button>
@@ -64,7 +64,7 @@ export default function AdminDashboard() {
       <main className="container-x py-10">
         <div className="grid gap-4 sm:grid-cols-4">
           {STATUSES.map((s) => (
-            <div key={s} className="rounded-xl border-2 border-ink bg-cream-50 p-5">
+            <div key={s} className="rounded-xl border-2 border-ink bg-orange-50 p-5">
               <p className="font-heading text-xs font-bold uppercase tracking-widest text-ink-muted">
                 {s}
               </p>
@@ -79,7 +79,7 @@ export default function AdminDashboard() {
         ) : leads.length === 0 ? (
           <p className="mt-10 text-ink-muted">No leads yet. Submissions from the contact form land here.</p>
         ) : (
-          <div className="mt-8 overflow-x-auto rounded-2xl border-2 border-ink bg-cream-50">
+          <div className="mt-8 overflow-x-auto rounded-2xl border-2 border-ink bg-orange-50">
             <table className="w-full text-left text-sm">
               <thead className="border-b-2 border-ink font-heading text-xs uppercase tracking-wide">
                 <tr>
@@ -91,7 +91,7 @@ export default function AdminDashboard() {
                   <th className="px-4 py-3"></th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-cream-200">
+              <tbody className="divide-y divide-orange-100">
                 {leads.map((l) => (
                   <tr key={l.id} className="align-top">
                     <td className="px-4 py-3 font-semibold">{l.name}</td>

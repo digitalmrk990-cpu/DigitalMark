@@ -3,13 +3,13 @@ import { Instagram, Mail, Phone, Globe } from 'lucide-react'
 
 export default function Footer() {
   return (
-    <footer className="mt-24 border-t-2 border-ink bg-ink text-cream-50">
+    <footer className="mt-24 border-t-2 border-ink bg-ink text-orange-50">
       <div className="container-x grid gap-10 py-14 md:grid-cols-3">
         <div>
           <p className="font-display text-2xl italic text-orange-400">
             Let's grow together
           </p>
-          <p className="mt-3 max-w-xs text-sm text-cream-200">
+          <p className="mt-3 max-w-xs text-sm text-orange-100">
             Ready to build your digital presence? We turn engagement into
             measurable business growth.
           </p>
@@ -37,7 +37,7 @@ export default function Footer() {
           <Link to="/contact" className="hover:text-orange-400">Contact</Link>
         </div>
       </div>
-      <div className="border-t border-ink-soft py-5 text-center text-xs text-cream-200">
+      <div className="border-t border-ink-soft py-5 text-center text-xs text-orange-100">
         © {new Date().getFullYear()} Social Media Agency. All rights reserved.
       </div>
     </footer>
