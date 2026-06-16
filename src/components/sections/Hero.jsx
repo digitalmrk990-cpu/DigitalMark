@@ -4,37 +4,37 @@ import { ArrowRight, Sparkles } from 'lucide-react'
 
 const floatingShapes = [
   {
-    className: 'top-[15%] right-[10%] h-20 w-20 rounded-full border-2 border-ink/20',
+    className: 'top-[15%] right-[10%] h-20 w-20 rounded-full border-2 border-white/20',
     animate: { y: [0, -40, 0], rotate: [0, 360] },
     transition: { duration: 10 },
   },
   {
-    className: 'top-[30%] right-[4%] h-14 w-14 rotate-45 border-2 border-ink/15',
+    className: 'top-[30%] right-[4%] h-14 w-14 rotate-45 border-2 border-white/15',
     animate: { y: [0, 30, 0], rotate: [0, 180, 360] },
     transition: { duration: 14 },
   },
   {
-    className: 'bottom-[30%] left-[6%] h-10 w-10 rounded-full bg-ink/8',
+    className: 'bottom-[30%] left-[6%] h-10 w-10 rounded-full bg-white/10',
     animate: { scale: [1, 1.3, 1], opacity: [0.2, 0.5, 0.2] },
     transition: { duration: 5 },
   },
   {
-    className: 'top-[45%] left-[3%] text-4xl text-ink/10 font-display font-bold leading-none',
+    className: 'top-[45%] left-[3%] text-4xl text-white/15 font-display font-bold leading-none',
     animate: { y: [0, -20, 0], x: [0, 10, 0] },
     transition: { duration: 8 },
   },
   {
-    className: 'top-[8%] left-[22%] h-5 w-5 rotate-45 border-2 border-orange-50/40',
+    className: 'top-[8%] left-[22%] h-5 w-5 rotate-45 border-2 border-white/40',
     animate: { y: [0, 20, 0], rotate: [0, 360] },
     transition: { duration: 18 },
   },
   {
-    className: 'bottom-[15%] right-[20%] h-3 w-3 rounded-full bg-ink/15',
+    className: 'bottom-[15%] right-[20%] h-3 w-3 rounded-full bg-white/20',
     animate: { y: [0, -15, 0] },
     transition: { duration: 6, delay: 1 },
   },
   {
-    className: 'bottom-[40%] right-[30%] h-4 w-4 border-2 border-ink/10',
+    className: 'bottom-[40%] right-[30%] h-4 w-4 border-2 border-white/15',
     animate: { rotate: [0, 360], scale: [1, 1.2, 1] },
     transition: { duration: 8, delay: 0.5 },
   },
@@ -61,14 +61,14 @@ export default function Hero() {
           />
         ))}
         <motion.div
-          className="absolute top-[8%] right-[22%] text-2xl text-ink/10"
+          className="absolute top-[8%] right-[22%] text-2xl text-white/15"
           animate={{ y: [0, -15, 0], rotate: [0, 10, -10, 0] }}
           transition={{ duration: 9, repeat: Infinity, ease: 'easeInOut' }}
         >
           ✦
         </motion.div>
         <motion.div
-          className="absolute bottom-[20%] left-[15%] text-xl text-orange-50/30"
+          className="absolute bottom-[20%] left-[15%] text-xl text-white/25"
           animate={{ y: [0, 20, 0], rotate: [0, -10, 10, 0] }}
           transition={{ duration: 11, repeat: Infinity, ease: 'easeInOut' }}
         >

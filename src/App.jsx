@@ -10,6 +10,7 @@ import Contact from './pages/Contact'
 import AdminLogin from './admin/AdminLogin'
 import AdminDashboard from './admin/AdminDashboard'
 import { RequireAuth } from './hooks/useAuth'
+import Rocket from './components/Rocket'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -31,6 +32,7 @@ export default function App() {
   return (
     <>
       <ScrollToTop />
+      <Rocket />
       <Routes>
         {/* Admin (no public chrome) */}
         <Route path="/admin/login" element={<AdminLogin />} />

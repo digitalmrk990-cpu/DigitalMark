@@ -1,8 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
-import { gsap } from 'gsap'
-import { MotionPathPlugin } from 'gsap/MotionPathPlugin'
-
-gsap.registerPlugin(MotionPathPlugin)
+import { useState } from 'react'
 
 const DEFAULT_IMAGE = '/hero-default.jpg'
 
@@ -15,57 +11,6 @@ const wordData = [
 export default function ServicesHero() {
   const [bgImage, setBgImage] = useState(DEFAULT_IMAGE)
   const [activeWord, setActiveWord] = useState(null)
-  const rocketWrapRef = useRef(null)
-  const mousePos = useRef({ x: window.innerWidth / 2, y: window.innerHeight / 2 })
-
-  useEffect(() => {
-    const handleMouseMove = (e) => {
-      mousePos.current = { x: e.clientX, y: e.clientY }
-    }
-    document.addEventListener('mousemove', handleMouseMove)
-    return () => document.removeEventListener('mousemove', handleMouseMove)
-  }, [])
-
-  useEffect(() => {
-    let mounted = true
-
-    function flyRocket() {
-      if (!mounted || !rocketWrapRef.current) return
-
-      const startX = Math.random() * window.innerWidth
-      const startY = Math.random() * window.innerHeight
-      const { x, y } = mousePos.current
-
-      const cp1x = startX + (Math.random() * 500 - 250)
-      const cp1y = startY + (Math.random() * 500 - 250)
-      const cp2x = x + (Math.random() * 300 - 150)
-      const cp2y = y + (Math.random() * 300 - 150)
-      const endX = x + (Math.random() * 300 - 150)
-      const endY = y + (Math.random() * 300 - 150)
-
-      gsap.to(rocketWrapRef.current, {
-        duration: 8,
-        ease: 'power1.inOut',
-        motionPath: {
-          path: [
-            { x: startX, y: startY },
-            { x: cp1x, y: cp1y },
-            { x: cp2x, y: cp2y },
-            { x: endX, y: endY },
-          ],
-          curviness: 2,
-          autoRotate: true,
-        },
-        onComplete: flyRocket,
-      })
-    }
-
-    flyRocket()
-    return () => {
-      mounted = false
-      gsap.killTweensOf(rocketWrapRef.current)
-    }
-  }, [])
 
   const handleEnter = (w) => {
     setBgImage(w.image)
@@ -88,10 +33,6 @@ export default function ServicesHero() {
         .word{cursor:pointer}
         .hide{opacity:0;visibility:hidden}
         .glow{text-shadow:0 0 20px rgba(255,255,255,.25),0 0 40px rgba(255,255,255,.15)}
-        #rocketWrap{position:fixed;left:0;top:0;z-index:9999;pointer-events:none}
-        #rocket{width:90px;height:auto;display:block;filter:drop-shadow(0 0 15px rgba(255,255,255,.8)) drop-shadow(0 0 40px rgba(255,255,255,.3))}
-        .rocket-flame{position:absolute;width:35px;height:35px;left:-15px;top:28px;border-radius:50%;background:radial-gradient(circle,#fff,#ffd000,#ff6a00,transparent);filter:blur(8px);animation:flame .15s infinite alternate}
-        @keyframes flame{from{transform:scale(.8);opacity:.6}to{transform:scale(1.3);opacity:1}}
       `}</style>
 
       <div
@@ -141,11 +82,6 @@ export default function ServicesHero() {
             </span>
           </h1>
         </div>
-      </div>
-
-      <div id="rocketWrap" ref={rocketWrapRef}>
-        <div className="rocket-flame" />
-        <img src="/rocket.png" id="rocket" alt="Rocket" />
       </div>
     </section>
   )
