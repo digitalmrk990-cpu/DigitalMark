@@ -6,6 +6,7 @@ const links = [
   { to: '/services', label: 'Services' },
   { to: '/portfolio', label: 'Work' },
   { to: '/about', label: 'About' },
+   { to: '/ourteam', label: 'Our Team' },
 ]
 
 function Logo() {

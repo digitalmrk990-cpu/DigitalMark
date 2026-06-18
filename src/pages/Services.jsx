@@ -1,5 +1,7 @@
 
 import ServicesHero from '../components/sections/ServicesHero'
+import SplitSlider from '../components/sections/SplitSlider'
+import WebsiteDesignSlide from '../components/sections/WebsiteDesignSlide'
 import { servicePillars, websiteTypes } from '../data/content'
 import { SectionHeading } from '../components/ui/Section'
 import { CTABanner } from '../components/sections/Highlights'
@@ -10,6 +12,12 @@ export default function Services() {
 
     <>
       <ServicesHero />
+
+      <div className="h-16 bg-white" />
+
+      <SplitSlider />
+
+      <WebsiteDesignSlide />
 
       <div className="container-x space-y-20 py-20">
         {servicePillars.map((s, i) => (

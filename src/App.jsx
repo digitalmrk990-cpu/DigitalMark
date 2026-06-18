@@ -11,6 +11,8 @@ import AdminLogin from './admin/AdminLogin'
 import AdminDashboard from './admin/AdminDashboard'
 import { RequireAuth } from './hooks/useAuth'
 import Rocket from './components/Rocket'
+import WhatsApp from './components/WhatsApp'
+import OurTeam from './pages/OurTeam'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -33,6 +35,7 @@ export default function App() {
     <>
       <ScrollToTop />
       <Rocket />
+      <WhatsApp />
       <Routes>
         {/* Admin (no public chrome) */}
         <Route path="/admin/login" element={<AdminLogin />} />
@@ -51,6 +54,7 @@ export default function App() {
         <Route path="/portfolio" element={<PublicLayout><Portfolio /></PublicLayout>} />
         <Route path="/about" element={<PublicLayout><About /></PublicLayout>} />
         <Route path="/contact" element={<PublicLayout><Contact /></PublicLayout>} />
+        <Route path="/ourteam" element={<PublicLayout>< OurTeam /></PublicLayout>} />
       </Routes>
     </>
   )

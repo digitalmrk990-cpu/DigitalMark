@@ -1,14 +1,54 @@
 import { useState } from "react";
 
 const products = [
-  { name: "Orange Squeeze", img: "/images/orange.jpg", hoverImg: "/images/orange1.jpg", tag: "9g Fiber" },
-  { name: "Ginger Ale", img: "/images/ginger.png", hoverImg: "/images/ginger.jpg", tag: "9g Fiber" },
-  { name: "Citrus Rush", img: "/images/citrus.png", hoverImg: "/images/citrus.jpg", tag: "9g Fiber" },
-  { name: "Doctor Goodwin", img: "/images/doctor.png", hoverImg: "/images/doctor.jpg", tag: "9g Fiber" },
-  { name: "Cherry Vanilla", img: "/images/cherry.png", hoverImg: "/images/cherry.jpg", tag: "9g Fiber" },
-  { name: "Classic Root Beer", img: "/images/rootbeer.png", hoverImg: "/images/rootbeer.jpg", tag: "9g Fiber" },
-  { name: "Vintage Cola", img: "/images/cola.png", hoverImg: "/images/cola.jpg", tag: "9g Fiber" },
-  { name: "Strawberry Vanilla", img: "/images/strawberry.png", hoverImg: "/images/strawberry.jpg", tag: "9g Fiber" },
+  {
+    name: "Instagram Posts",
+    img: "/images/instagram-posts.jpg",
+    hoverImg: "/images/instagram-posts-hover.jpg",
+    tag: "Creative Design",
+  },
+  {
+    name: "Carousels",
+    img: "/images/carousels.jpg",
+    hoverImg: "/images/carousels-hover.jpg",
+    tag: "Engaging Content",
+  },
+  {
+    name: "Story Designs",
+    img: "/images/story-designs.jpg",
+    hoverImg: "/images/story-designs-hover.jpg",
+    tag: "Social Media",
+  },
+  {
+    name: "Ad Creatives",
+    img: "/images/ad-creatives.jpg",
+    hoverImg: "/images/ad-creatives-hover.jpg",
+    tag: "Performance Marketing",
+  },
+  {
+    name: "Event Posters",
+    img: "/images/event-posters.jpg",
+    hoverImg: "/images/event-posters-hover.jpg",
+    tag: "Promotional Design",
+  },
+  {
+    name: "Branding Assets",
+    img: "/images/branding-assets.jpg",
+    hoverImg: "/images/branding-assets-hover.jpg",
+    tag: "Brand Identity",
+  },
+  {
+    name: "Infographics",
+    img: "/images/infographics.jpg",
+    hoverImg: "/images/infographics-hover.jpg",
+    tag: "Visual Communication",
+  },
+  {
+    name: "Reels & Motion Graphics",
+    img: "/images/reels-motion.jpg",
+    hoverImg: "/images/reels-motion-hover.jpg",
+    tag: "Video Content",
+  },
 ];
 
 const VISIBLE = 4; // ek baar me kitne cards dikhenge
@@ -34,10 +74,10 @@ export default function OlipopCollection() {
     <section className="bg-[#faf3e3] py-16 px-4 overflow-hidden">
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-4xl md:text-5xl font-extrabold text-[#1c4631] mb-3">
-          Shop our collections
+          OUR SERVICES
         </h2>
         <p className="text-[#1c4631] text-sm font-medium mb-10">
-          9g Fiber • Keep Refrigerated ❄
+        Design • Content • Branding • Growth ✨
         </p>
 
         <div className="relative flex items-center justify-center">
