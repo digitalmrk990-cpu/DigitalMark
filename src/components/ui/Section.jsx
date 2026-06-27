@@ -1,7 +1,7 @@
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 
-export function SectionHeading({ eyebrow, title, sub, center }) {
+export function SectionHeading({ eyebrow, title, sub, center, titleClass, eyebrowClass }) {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-40px' })
 
@@ -12,7 +12,7 @@ export function SectionHeading({ eyebrow, title, sub, center }) {
           initial={{ opacity: 0, x: -20 }}
           animate={isInView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.4 }}
-          className="eyebrow"
+          className={`eyebrow ${eyebrowClass || ''}`}
         >
           {eyebrow}
         </motion.p>
@@ -21,7 +21,7 @@ export function SectionHeading({ eyebrow, title, sub, center }) {
         initial={{ opacity: 0, y: 20 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.5, delay: 0.1 }}
-        className="mt-3 font-display text-4xl font-semibold leading-[1.05] text-ink sm:text-5xl"
+        className={`mt-3 font-display text-4xl font-semibold leading-[1.05] sm:text-5xl ${titleClass || 'text-ink'}`}
       >
         {title}
       </motion.h2>
